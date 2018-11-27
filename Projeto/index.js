@@ -98,3 +98,50 @@ window.addEventListener('focus', event => {
 document.addEventListener('click', event => {
     console.log("click");
 });
+
+//############
+console.log("\n\n");
+console.log("Eventos - com Data");
+let dataAtual = new Date();
+console.log(dataAtual);
+console.log(`Dia: ${dataAtual.getDate()}`);
+console.log(`Mês: ${dataAtual.getMonth()} lembrando que mês começa em 00`);
+console.log(`Ano: ${dataAtual.getFullYear()}`);
+console.log(`Data no formato local (Brasil): ${dataAtual.toLocaleDateString("pt-BR")}`);
+
+//############
+console.log("\n\n");
+console.log("ARRAY");
+let carros = ["Palio 1998", "Toro 2000", "Uno 2018", 10, true, new Date(), function(){}];
+console.log(`Array: ${carros}`);
+console.log(`Array - Tamanho: ${carros.length}`);
+console.log(`Array - Posição 2: ${carros[2]}`);
+console.log(`Array - Posição 5 (Data completa): ${carros[5]}`);
+console.log(`Array - Posição 5 (Data dia): ${carros[5].getDate()}`);
+
+//############
+console.log("\n\n");
+console.log("ARRAY com ForEach");
+carros.forEach(function(value, index){
+    console.log(index, value);
+});
+
+//############
+console.log("\n\n");
+console.log("ARRAY - Exemplo - Testando functions no array");
+let numeros = [10, 20, 30, 40, 
+    function(numArray){
+        let somaNumeros = 0;
+        numArray.forEach(function(value){
+            if (typeof value == 'number'){
+                somaNumeros = somaNumeros + value;
+            }
+         })
+         return somaNumeros;
+    }    
+];
+
+numeros.forEach(function(value, index){
+    console.log(`Números: ${index} ${value}`);
+});
+console.log(`Resultado da funcção: ${numeros[4](numeros)}`);
