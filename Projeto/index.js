@@ -145,3 +145,35 @@ numeros.forEach(function(value, index){
     console.log(`Números: ${index} ${value}`);
 });
 console.log(`Resultado da funcção: ${numeros[4](numeros)}`);
+
+//############
+console.log("\n\n");
+console.log("Orientação a Objetos");
+console.log("Exemplo 1 - Celular padrão");
+let celular = function(){
+    this.cor = "prata";
+    this.ligar = function(){
+        console.log("uma ligação!")
+        return "ligando";
+    }
+}
+let objeto = new celular();
+console.log(objeto);
+console.log(objeto.cor);
+console.log(objeto.ligar());
+
+console.log("Exemplo 2 - (Nova forma) Celular com classe (OO) ");
+class classCelular{
+    constructor(){
+        this.cor = "vermelho";
+    }
+
+    ligar(){
+        console.log("uma ligação!")
+        return "ligando";
+    }
+}
+let objetoCelular = new classCelular();
+console.log(objetoCelular);
+console.log(objetoCelular.cor);
+console.log(objetoCelular.ligar());
