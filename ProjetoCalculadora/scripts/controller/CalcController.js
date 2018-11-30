@@ -6,7 +6,8 @@ class CaclController{
         this._dateEl = document.querySelector("#data");
         this._timeEl = document.querySelector("#hora");
         this._currentDate;
-        this.initialize(); 
+        this.initialize();
+        this.initiButtonsEvents(); 
     }
 
     initialize(){
@@ -24,6 +25,17 @@ class CaclController{
         }, 10000);
 
     }
+
+    initiButtonsEvents(){
+        let buttons = document.querySelectorAll("#buttons > g, #parts > g");
+        
+        buttons.forEach((btn, index) =>{
+            btn.addEventListener('click', e =>{
+                console.log(btn.className.baseVal.replace("btn-",""));
+            });
+        })
+    }
+
 
     setDisplayDateTime(){
         //Data editada misturando data com numeros e escrita
